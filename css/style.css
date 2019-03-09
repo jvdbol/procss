@@ -49,13 +49,14 @@ body{
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
+    text-align: center;
 }
 .heading-primary{
     color : #fff;
     text-transform: uppercase;
-
+    
     backface-visibility: hidden; /* hack om trilling in aniematie tegen te geen, die ik niet zie overigens */
-
+    margin-bottom: 60px;
 }
 .heading-primary-main{
     display: block;
@@ -107,4 +108,30 @@ body{
         transform: translateX(0px)
     }
 
+}
+
+.btn:link,
+.btn:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 15px 40px;
+    display: inline-block;
+    border-radius: 100px;
+    transition: all .2s; /* In de init state moet ook transition!; zie W3schools*/
+}
+
+.btn:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,.2); /* left (-)/right(+) bottom (+)/top (-),blur, color */
+}
+
+.btn:active{
+    transform: translate(-1px); /*related to link state, not hover */
+    box-shadow: 0 5px 10px rgba(0,0,0,.2);
+}
+
+.btn-white{
+    background-color: #fff;
+    color:#777;
+    
 }
