@@ -6,7 +6,7 @@ Medium green: #55c57a
 Dark green: #28b485
 
 */
-
+ 
 * {
     margin: 0;
     padding: 0;
@@ -53,28 +53,54 @@ body{
 .heading-primary{
     color : #fff;
     text-transform: uppercase;
+
+    backface-visibility: hidden; /* hack om trilling in aniematie tegen te geen, die ik niet zie overigens */
+
 }
 .heading-primary-main{
     display: block;
     font-size: 60px;
     font-weight: 400;
     letter-spacing: 35px;
-    animation: moveInLeft 3s;
+    animation: moveInLeft 1s ease-out;
 }
 .heading-primary-sub{
     display: block;
     font-size: 20px;
     font-weight: 700;
     letter-spacing: 17.4px;
+    animation-name: moveInRight;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    /*
+        animation-delay : 3s;
+        animation-iterration-count: 3;
+        EN NOG MEER MOGELIJK
+    */
 }   
 
 @keyframes moveInLeft {
     0%{
        opacity: 0; 
-       transform: translateX(-100px)
+       transform: translateX(-100px);
     }
     80%{
-
+        transform: translateX(10px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0px)
+    }
+/* Rotation is ook mogelijk! */
+/* &keyframes ook mogelijk met hover */
+}
+@keyframes moveInRight {
+    0%{
+       opacity: 0; 
+       transform: translateX(100px);
+    }
+    80%{
+        transform: translateX(-10px);
     }
     100%{
         opacity: 1;
