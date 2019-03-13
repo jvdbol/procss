@@ -109,6 +109,18 @@ body{
     }
 
 }
+@keyframes moveInBottom {
+    0%{
+       opacity: 0; 
+       transform: translatey(50px);
+    }
+    
+    100%{
+        opacity: 1;
+        transform: translateY(0px)
+    }
+
+}
 
 .btn:link,
 .btn:visited {
@@ -118,6 +130,7 @@ body{
     display: inline-block;
     border-radius: 100px;
     transition: all .2s; /* In de init state moet ook transition!; zie W3schools*/
+    position: relative;
 }
 
 .btn:hover{
@@ -126,7 +139,7 @@ body{
 }
 
 .btn:active{
-    transform: translate(-1px); /*related to link state, not hover */
+    transform: translate(-1px); /*related to link state, not hover state */
     box-shadow: 0 5px 10px rgba(0,0,0,.2);
 }
 
@@ -134,4 +147,31 @@ body{
     background-color: #fff;
     color:#777;
     
+}
+
+.btn::after{
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 200px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .5s; 
+}
+.btn-white::after {
+    background-color: #fff;
+}
+.btn:hover::after{
+    /* transform: scale(1.4); */
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity : 0;
+}
+/*button verschijnt van onderaf bij vernieuwing pagina*/
+.btn-animated {
+    animation: moveInBottom .5s ease-Out .75s;
+    animation-fill-mode: backwards;
+
 }
