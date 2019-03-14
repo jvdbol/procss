@@ -1,0 +1,27 @@
+body{
+    padding: 50px;
+} 
+/* 0 0 0 1 */
+
+.button{
+    font-size: 20xp;
+    color: white;
+    background-color:blue;
+}
+/* 0 0 1 0 */
+a{
+    background-color: purple;
+}
+/* 0 0 0 1 */
+
+
+#nav div a.button:hover {
+    background-color: yellow;
+}
+/* 0 1 2 2 */
+
+#nav div.pull-right a.button{
+    background-color: orangered;
+}
+/* 0 1 2 2 */
+
