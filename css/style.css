@@ -7,23 +7,30 @@ Dark green: #28b485
 
 */
  
-* {
+*,
+*::after,
+*::before  {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: inherit;
+}
+
+html{
+    font-size: 62.5%;
 }
 
 body{
     font-family: "Lato", sans-serif;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 1.6rem;
     line-height: 1.7;
     color: #777;
-    padding: 30px;
+    padding: 2rem;
+    box-sizing: border-box;
 }
 
 .header{
-    height: 95vh;
+    height: 90vh;
     background-image: linear-gradient(
         to right, 
         rgba(126, 213, 111, 0.8), 
@@ -38,11 +45,11 @@ body{
 
 .logo-box{
     position: absolute; /*header daarom relative!*/
-    top: 40px;
-    left: 40px;
+    top: 4rem;
+    left: 4rem;
 }
 .logo {
-    height: 35px;
+    height: 3.5rem;
 }
 .text-box{
     position: absolute;
@@ -56,20 +63,20 @@ body{
     text-transform: uppercase;
     
     backface-visibility: hidden; /* hack om trilling in aniematie tegen te geen, die ik niet zie overigens */
-    margin-bottom: 60px;
+    margin-bottom: 6rem;
 }
 .heading-primary-main{
     display: block;
-    font-size: 60px;
+    font-size: 6rem;
     font-weight: 400;
-    letter-spacing: 35px;
+    letter-spacing: 3.5rem;
     animation: moveInLeft 1s ease-out;
 }
 .heading-primary-sub{
     display: block;
-    font-size: 20px;
+    font-size: 2rem;
     font-weight: 700;
-    letter-spacing: 17.4px;
+    letter-spacing: 1.7rem;
     animation-name: moveInRight;
     animation-duration: 1s;
     animation-timing-function: ease-out;
@@ -83,14 +90,14 @@ body{
 @keyframes moveInLeft {
     0%{
        opacity: 0; 
-       transform: translateX(-100px);
+       transform: translateX(-10rem);
     }
     80%{
-        transform: translateX(10px);
+        transform: translateX(1rem);
     }
     100%{
         opacity: 1;
-        transform: translateX(0px)
+        transform: translateX(0)
     }
 /* Rotation is ook mogelijk! */
 /* &keyframes ook mogelijk met hover */
@@ -98,26 +105,26 @@ body{
 @keyframes moveInRight {
     0%{
        opacity: 0; 
-       transform: translateX(100px);
+       transform: translateX(10rem);
     }
     80%{
-        transform: translateX(-10px);
+        transform: translateX(-1rem);
     }
     100%{
         opacity: 1;
-        transform: translateX(0px)
+        transform: translateX(0)
     }
 
 }
 @keyframes moveInBottom {
     0%{
        opacity: 0; 
-       transform: translatey(50px);
+       transform: translatey(5rem);
     }
     
     100%{
         opacity: 1;
-        transform: translateY(0px)
+        transform: translateY(0)
     }
 
 }
@@ -126,21 +133,22 @@ body{
 .btn:visited {
     text-transform: uppercase;
     text-decoration: none;
-    padding: 15px 40px;
+    padding: 1.5rem 4rem;
     display: inline-block;
-    border-radius: 100px;
+    border-radius: 10rem;
     transition: all .2s; /* In de init state moet ook transition!; zie W3schools*/
     position: relative;
+    /* font-size: 1.6rem; */
 }
 
 .btn:hover{
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0,0,0,.2); /* left (-)/right(+) bottom (+)/top (-),blur, color */
+    transform: translateY(-.3rem);
+    box-shadow: 0 1rem 2rem rgba(0,0,0,.2); /* left (-)/right(+) bottom (+)/top (-),blur, color */
 }
 
 .btn:active{
-    transform: translate(-1px); /*related to link state, not hover state */
-    box-shadow: 0 5px 10px rgba(0,0,0,.2);
+    transform: translate(-.1rem); /*related to link state, not hover state */
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.2);
 }
 
 .btn-white{
@@ -154,7 +162,7 @@ body{
     display: inline-block;
     height: 100%;
     width: 100%;
-    border-radius: 200px;
+    border-radius: 20rem;
     position: absolute;
     top: 0;
     left: 0;
