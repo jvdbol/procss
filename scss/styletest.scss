@@ -33,7 +33,7 @@ $width-button: 150px;
 }
 
 nav {
-    margin: divide(12,2)*1rem;
+    margin: divide(12,2)*1rem; //of px etc
     background-color: $primary-color;
     @include clearfix;
    
@@ -63,8 +63,7 @@ nav {
     float: right;
 }
 
-.btn-main,
-.btn-hot {
+%btn-placeholder {
     padding: 10px;
     display: inline-block;
     text-align: center;
@@ -74,15 +73,19 @@ nav {
 }
 
 .btn-main {
+    
     &:link{
+        @extend %btn-placeholder;
         background-color:$secondary-color;
     }
     &:hover{
+        
         background-color:darken($secondary-color, 15%);
     }
 }
 .btn-hot {
     &:link{
+        @extend %btn-placeholder;
         background-color:$tertiary-color;
     }
     &:hover{
