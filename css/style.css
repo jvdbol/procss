@@ -6,180 +6,269 @@ Medium green: #55c57a
 Dark green: #28b485
 
 */
- 
 *,
 *::after,
-*::before  {
-    margin: 0;
-    padding: 0;
-    box-sizing: inherit;
+*::before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
 }
 
-html{
-    font-size: 62.5%;
+html {
+  font-size: 62.5%;
 }
 
-body{
-    font-family: "Lato", sans-serif;
-    font-weight: 400;
-    font-size: 1.6rem;
-    line-height: 1.7;
-    color: #777;
-    padding: 2rem;
-    box-sizing: border-box;
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1.7;
+  color: #777;
+  padding: 2rem;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-.header{
-    height: 90vh;
-    background-image: linear-gradient(
-        to right, 
-        rgba(126, 213, 111, 0.8), 
-        rgba(40, 180, 133, 0.8)), 
-    url(../img/hero.jpg);
-    background-color: green;
-    background-size: cover;
-    background-position: top;
-    position: relative;
-    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); /* zie ook path-clip maker: bennettfeely.com/clippy */
+.header {
+  height: 90vh;
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(126, 213, 111, 0.8)), to(rgba(40, 180, 133, 0.8))), url(../img/hero.jpg);
+  background-image: -webkit-linear-gradient(left, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
+  background-image: -o-linear-gradient(left, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
+  background-image: linear-gradient(to right, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
+  background-color: green;
+  background-size: cover;
+  background-position: top;
+  position: relative;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  /* zie ook path-clip maker: bennettfeely.com/clippy */
 }
 
-.header__logo-box{
-    position: absolute; /*header daarom relative!*/
-    top: 4rem;
-    left: 4rem;
+.header__logo-box {
+  position: absolute;
+  /*header daarom relative!*/
+  top: 4rem;
+  left: 4rem;
 }
+
 .header__logo {
-    height: 3.5rem;
+  height: 3.5rem;
 }
-.header__text-box{
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
+
+.header__text-box {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
 }
-.heading-primary{
-    color : #fff;
-    text-transform: uppercase;
-    
-    backface-visibility: hidden; /* hack om trilling in aniematie tegen te geen, die ik niet zie overigens */
-    margin-bottom: 6rem;
+
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  /* hack om trilling in aniematie tegen te geen, die ik niet zie overigens */
+  margin-bottom: 6rem;
 }
-.heading-primary--main{
-    display: block;
-    font-size: 6rem;
-    font-weight: 400;
-    letter-spacing: 3.5rem;
-    animation: moveInLeft 1s ease-out;
+
+.heading-primary--main {
+  display: block;
+  font-size: 6rem;
+  font-weight: 400;
+  letter-spacing: 3.5rem;
+  -webkit-animation: moveInLeft 1s ease-out;
+  animation: moveInLeft 1s ease-out;
 }
-.heading-primary--sub{
-    display: block;
-    font-size: 2rem;
-    font-weight: 700;
-    letter-spacing: 1.7rem;
-    animation-name: moveInRight;
-    animation-duration: 1s;
-    animation-timing-function: ease-out;
-    /*
+
+.heading-primary--sub {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 1.7rem;
+  -webkit-animation-name: moveInRight;
+  animation-name: moveInRight;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-timing-function: ease-out;
+  animation-timing-function: ease-out;
+  /*
         animation-delay : 3s;
         animation-iterration-count: 3;
         EN NOG MEER MOGELIJK
     */
-}   
+}
+
+@-webkit-keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-10rem);
+    transform: translateX(-10rem);
+  }
+  80% {
+    -webkit-transform: translateX(1rem);
+    transform: translateX(1rem);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  /* Rotation is ook mogelijk! */
+  /* &keyframes ook mogelijk met hover */
+}
 
 @keyframes moveInLeft {
-    0%{
-       opacity: 0; 
-       transform: translateX(-10rem);
-    }
-    80%{
-        transform: translateX(1rem);
-    }
-    100%{
-        opacity: 1;
-        transform: translateX(0)
-    }
-/* Rotation is ook mogelijk! */
-/* &keyframes ook mogelijk met hover */
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-10rem);
+    transform: translateX(-10rem);
+  }
+  80% {
+    -webkit-transform: translateX(1rem);
+    transform: translateX(1rem);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  /* Rotation is ook mogelijk! */
+  /* &keyframes ook mogelijk met hover */
 }
+
+@-webkit-keyframes moveInRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(10rem);
+    transform: translateX(10rem);
+  }
+  80% {
+    -webkit-transform: translateX(-1rem);
+    transform: translateX(-1rem);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
 @keyframes moveInRight {
-    0%{
-       opacity: 0; 
-       transform: translateX(10rem);
-    }
-    80%{
-        transform: translateX(-1rem);
-    }
-    100%{
-        opacity: 1;
-        transform: translateX(0)
-    }
-
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(10rem);
+    transform: translateX(10rem);
+  }
+  80% {
+    -webkit-transform: translateX(-1rem);
+    transform: translateX(-1rem);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
 }
-@keyframes moveInBottom {
-    0%{
-       opacity: 0; 
-       transform: translatey(5rem);
-    }
-    
-    100%{
-        opacity: 1;
-        transform: translateY(0)
-    }
 
+@-webkit-keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    -webkit-transform: translatey(5rem);
+    transform: translatey(5rem);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    -webkit-transform: translatey(5rem);
+    transform: translatey(5rem);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
 }
 
 .btn:link,
 .btn:visited {
-    text-transform: uppercase;
-    text-decoration: none;
-    padding: 1.5rem 4rem;
-    display: inline-block;
-    border-radius: 10rem;
-    transition: all .2s; /* In de init state moet ook transition!; zie W3schools*/
-    position: relative;
-    /* font-size: 1.6rem; */
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 1.5rem 4rem;
+  display: inline-block;
+  border-radius: 10rem;
+  -webkit-transition: all .2s;
+  -o-transition: all .2s;
+  transition: all .2s;
+  /* In de init state moet ook transition!; zie W3schools*/
+  position: relative;
+  /* font-size: 1.6rem; */
 }
 
-.btn:hover{
-    transform: translateY(-.3rem);
-    box-shadow: 0 1rem 2rem rgba(0,0,0,.2); /* left (-)/right(+) bottom (+)/top (-),blur, color */
+.btn:hover {
+  -webkit-transform: translateY(-0.3rem);
+  -ms-transform: translateY(-0.3rem);
+  transform: translateY(-0.3rem);
+  -webkit-box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+  /* left (-)/right(+) bottom (+)/top (-),blur, color */
 }
 
-.btn:active{
-    transform: translate(-.1rem); /*related to link state, not hover state */
-    box-shadow: 0 .5rem 1rem rgba(0,0,0,.2);
+.btn:active {
+  -webkit-transform: translate(-0.1rem);
+  -ms-transform: translate(-0.1rem);
+  transform: translate(-0.1rem);
+  /*related to link state, not hover state */
+  -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
 }
 
-.btn--white{
-    background-color: #fff;
-    color:#777;
-    
+.btn--white {
+  background-color: #fff;
+  color: #777;
 }
 
-.btn::after{
-    content: "";
-    display: inline-block;
-    height: 100%;
-    width: 100%;
-    border-radius: 20rem;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    transition: all .5s; 
+.btn::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 20rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  -webkit-transition: all .5s;
+  -o-transition: all .5s;
+  transition: all .5s;
 }
+
 .btn--white::after {
-    background-color: #fff;
+  background-color: #fff;
 }
-.btn:hover::after{
-    /* transform: scale(1.4); */
-    transform: scaleX(1.4) scaleY(1.6);
-    opacity : 0;
+
+.btn:hover::after {
+  /* transform: scale(1.4); */
+  -webkit-transform: scaleX(1.4) scaleY(1.6);
+  -ms-transform: scaleX(1.4) scaleY(1.6);
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
 }
+
 /*button verschijnt van onderaf bij vernieuwing pagina*/
 .btn--animated {
-    animation: moveInBottom .5s ease-Out .75s;
-    animation-fill-mode: backwards;
-
+  -webkit-animation: moveInBottom .5s ease-Out .75s;
+  animation: moveInBottom .5s ease-Out .75s;
+  -webkit-animation-fill-mode: backwards;
+  animation-fill-mode: backwards;
 }
