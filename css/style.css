@@ -158,12 +158,12 @@ body {
 
 .row {
   max-width: 114rem;
-  background-color: #eee;
+  background-color: #dddddd;
   margin: 0 auto;
 }
 
 .row:not(:last-child) {
-  margin-bottom: 8rem;
+  margin-bottom: 3rem;
 }
 
 .row::after {
@@ -174,11 +174,16 @@ body {
 
 .row [class^="col-"] {
   background-color: orange;
+  text-align: center;
   float: left;
 }
 
 .row [class^="col-"]:not(:last-child) {
   margin-right: 6rem;
+}
+
+.row .col-1-of-1 {
+  width: 100%;
 }
 
 .row .col-1-of-2 {
