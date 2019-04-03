@@ -1,6 +1,6 @@
 .row {
     max-width: $grid-width;
-    background-color:lighten($color-gray, 40%);
+    background-color:lighten($color-grey-dark, 40%);
     margin: 0 auto;
     //Het NOT pseudo element!
     &:not(:last-child){

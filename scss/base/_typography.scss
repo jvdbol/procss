@@ -3,7 +3,7 @@ body{
     font-weight: 400;
     font-size: 1.6rem;
     line-height: 1.7;
-    color:$color-gray;
+    color:$color-grey-dark;
     padding: 2rem;
 }
 
@@ -34,4 +34,20 @@ body{
             EN NOG MEER MOGELIJK
         */
     }   
+}
+
+.heading-secondary{
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark);
+    display: inline-block;
+    -webkit-background-clip: text; //nog experimenteel
+    color: transparent;
+    transition: all .2s;
+    letter-spacing: .2rem;
+    &:hover{
+        transform: skewY(2deg) skewX(15deg) scale(1.1);
+        text-shadow: .5rem 1rem 2rem rgba($color-black, 20%)
+    }
 }
