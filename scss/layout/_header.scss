@@ -9,7 +9,10 @@
     background-size: cover;
     background-position: top;
     position: relative;
+    
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
     clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); /* zie ook path-clip maker: bennettfeely.com/clippy */
+   
     &__logo-box{
         position: absolute; /*header daarom relative!*/
         top: 4rem;
