@@ -28,6 +28,14 @@
         &::after {
             background-color: $color-white;
         }
+    }
+
+    &--green{
+        background-color: $color-primary-dark;
+        color: $color-white;  
+        &::after {
+            background-color: $color-white;
+        }
     } 
     &::after{
         content: "";

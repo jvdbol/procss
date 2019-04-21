@@ -142,6 +142,14 @@ body {
   margin-bottom: 8rem;
 }
 
+.u-margin-top-big {
+  margin-top: 8rem;
+}
+
+.u-margin-top-huge {
+  margin-top: 10rem;
+}
+
 .btn {
   /*button verschijnt van onderaf bij vernieuwing pagina*/
 }
@@ -182,6 +190,15 @@ body {
 }
 
 .btn--white::after {
+  background-color: #fff;
+}
+
+.btn--green {
+  background-color: #28b485;
+  color: #fff;
+}
+
+.btn--green::after {
   background-color: #fff;
 }
 
@@ -532,6 +549,6 @@ body {
 
 .section-tours {
   background-color: #f7f7f7;
-  padding: 25rem 0 50rem 0;
+  padding: 25rem 0 15rem 0;
   margin-top: -10rem;
 }
