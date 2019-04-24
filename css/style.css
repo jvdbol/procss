@@ -108,8 +108,8 @@ body {
 }
 
 .heading-secondary:hover {
-  transform: skewY(-2deg) skewX(5deg) scale(1.1);
-  text-shadow: 0.1rem 1rem 1rem black;
+  transform: skewY(-2deg) skewX(4deg) scale(1.1);
+  text-shadow: 0 0.5rem 3rem rgba(0, 0, 0, 0.5);
 }
 
 .heading-tertiary {
@@ -643,4 +643,9 @@ body {
   border-radius: 3px;
   box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.2);
   height: 50rem;
+}
+
+.book__form {
+  width: 50%;
+  padding: 6rem;
 }
