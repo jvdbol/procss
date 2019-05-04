@@ -32,8 +32,8 @@
 
 //PACEHOLDER ANIMATIE: COMPLEX zie eind college 46
 
-        &::-webit-input-placeholder{
-            color: $color-grey-dark;
+        &::-webkit-input-placeholder{
+            color: $color-grey-dark-2;
         }
     }
 
@@ -52,6 +52,54 @@
         opacity: 0;
         visibility: hidden;
         transform : translateY(-4rem);
+    }
+
+    &__radio-group{
+        width: 49%; // 50 is 1%teveel hier
+        display: inline-block;
+    }
+
+    &__radio-input{
+        display: none;
+    }
+
+    &__radio-label{
+        font-size: $default-font-size;
+        cursor: pointer;
+        position: relative;
+        padding-left: 4.5rem;
+    }
+
+    &__radio-button{
+        height: 3rem;
+        width: 3rem;
+        border: 5px solid $color-primary-dark;
+        display: inline-block;
+        border-radius: 50%;
+        position: absolute;
+        left: 0;
+        top: -.4rem;
+
+        &::after{
+            content: "";
+            display: block;
+            height: 1.3rem;
+            width: 1.3rem;
+            border-radius: 50%;
+            background-color: $color-primary-dark;
+            position: absolute;
+            left:50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity .2s;
+        }
+
+        
+    }
+
+    &__radio-input:checked ~ &__radio-label &__radio-button::after {
+        opacity: 1;
     }
 
 
