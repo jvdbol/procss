@@ -770,6 +770,7 @@ body {
   border-radius: 50%;
   z-index: 2000;
   text-align: center;
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
   cursor: pointer;
 }
 
@@ -777,22 +778,23 @@ body {
   height: 6rem;
   width: 6rem;
   border-radius: 50%;
-  background-color: red;
   position: fixed;
   top: 6.5rem;
   right: 6.5rem;
   background-image: radial-gradient(#7ed56f, #28b485);
   z-index: 1000;
-  transform: scale(100);
+  transition: transform 0.5s cubic-bezier(0.1, 0, 0.61, 1);
 }
 
 .navigation__nav {
   height: 100vh;
-  width: 100%;
   position: fixed;
   top: 0;
   right: 0;
   z-index: 1500;
+  opacity: 0;
+  width: 0;
+  transition: all 0.5s cubic-bezier(0.96, -0.4, 0.17, 1.44);
 }
 
 .navigation__list {
@@ -879,6 +881,15 @@ body {
 .navigation__checkbox:checked + .navigation__button .navigation__icon::after {
   top: 0;
   transform: rotate(-135deg);
+}
+
+.navigation__checkbox:checked ~ .navigation__background {
+  transform: scale(100);
+}
+
+.navigation__checkbox:checked ~ .navigation__nav {
+  opacity: 1;
+  width: 100%;
 }
 
 .section-about {

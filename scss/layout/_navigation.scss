@@ -15,6 +15,7 @@
         border-radius: 50%;
         z-index: 2000;
         text-align: center;
+        box-shadow: 0 1rem 3rem rgba($color-black, .1);
         cursor: pointer;
     }
 
@@ -22,26 +23,29 @@
         height: 6rem;
         width: 6rem;
         border-radius: 50%;
-        background-color: red;
+        //background-color: red;
         position: fixed;
         top: 6.5rem;
         right: 6.5rem;
         background-image: radial-gradient($color-primary-light, $color-primary-dark) ;
         z-index: 1000;
+        //transform: scale(100);
 
-        transform: scale(100);
-
-
+        // CUBIC-BEZIER zie: https://cubic-bezier.com en https://easings.ne
+        transition: transform .5s cubic-bezier(.1,0,.61,1);
     }
 
     &__nav{
         height: 100vh;
-        width: 100%;
+        //width: 100%;
         position: fixed;
         top: 0;
         right: 0;
         z-index: 1500;
-
+        opacity: 0;
+        width: 0;
+        // CUBIC-BEZIER zie: https://cubic-bezier.com en https://easings.ne
+        transition: all .5s cubic-bezier(.96,-0.4,.17,1.44);
     }
 
     &__list{
@@ -49,11 +53,11 @@
         list-style: none;
         text-align: center;
 
+        //width: 100%;
     }
 
     &__item{
         margin: 1rem;
-
     }
 
     &__link{
@@ -75,6 +79,7 @@
                 margin-right: 1.5rem;
             }
         }  
+
         &:hover,
         &:active{
             background-position: 100%;
@@ -82,6 +87,8 @@
             transform: translateX(1rem);
         }      
     }
+
+
     //ICON
     &__icon{
         position: relative;
@@ -112,8 +119,8 @@
             top: .8rem;
             //transform-origin: center;
         }
-
     }
+
     &__button:hover &__icon::before{
         top: -1rem;
     }
@@ -124,20 +131,27 @@
     &__checkbox:checked + &__button &__icon{
         //background-color: red;
         background-color: transparent;
-        
     }
+
     &__checkbox:checked + &__button &__icon::before {
         //background-color: lime;
         top: 0;
         //transform: rotate(45deg);
         transform: rotate(135deg);
-        
     }
     &__checkbox:checked + &__button &__icon::after {
         //background-color: rgb(167, 28, 209) ;
         top: 0;
         //transform: rotate(-45deg);
         transform: rotate(-135deg);
-        
+    }
+
+    &__checkbox:checked ~&__background {
+        transform: scale(100);
+    }
+
+    &__checkbox:checked ~&__nav {
+        opacity: 1;
+        width: 100%;
     }
 }
