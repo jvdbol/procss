@@ -6,7 +6,15 @@
     }
 }
 
-@mixin center-both(){
+@mixin center-both{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+//copy genoemd volgens college
+@mixin absCenter{
     position: absolute;
     top: 50%;
     left: 50%;
