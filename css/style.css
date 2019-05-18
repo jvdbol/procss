@@ -567,6 +567,9 @@ body {
   top: 0;
   left: 0;
   z-index: 10000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all .3s;
 }
 
 .popup__content {
@@ -580,6 +583,9 @@ body {
   border-radius: 3px;
   display: table;
   overflow: hidden;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0);
+  transition: all .45s .2s;
 }
 
 .popup__left {
@@ -612,6 +618,32 @@ body {
   -ms-hyphens: auto;
   -webkit-hyphens: auto;
   hyphens: auto;
+}
+
+.popup:target {
+  opacity: 1;
+  visibility: visible;
+}
+
+.popup:target .popup__content {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.popup__close:link, .popup__close:visited {
+  position: absolute;
+  top: 3rem;
+  right: 3rem;
+  text-decoration: none;
+  display: inline-block;
+  line-height: 1;
+  font-size: 4rem;
+  color: #777;
+  transition: all .5s;
+}
+
+.popup__close:hover {
+  color: #28b485;
 }
 
 .story {
