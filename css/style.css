@@ -1,3 +1,24 @@
+/*
+0 - 600px:          Phone
+600 - 900px         Tablet Portrait
+900 - 1200px        Tablet Landscape
+[1200 - 1800]       Normal style Desktop First Design
+1800px+             Big Desktop
+
+
+$breakpoint arguments choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+*/
+/* em and rem don't work normal in mediaqueries, they are dependend on the choosen 
+BROWSER font-size.
+REMs are also a bit problematic in mediaqueries in  some browsers.
+
+1em = 16px
+*/
 @keyframes moveInLeft {
   0% {
     opacity: 0;
@@ -53,6 +74,44 @@ html {
 
 body {
   box-sizing: border-box;
+}
+
+@media screen and (max-width: 600px) {
+  body {
+    color: red;
+  }
+}
+
+@media screen and (max-width: 75em) {
+  body {
+    text-align: center;
+    color: navy !important;
+    font-size: 2.2rem !important;
+  }
+}
+
+@media screen and (max-width: 56.25em) {
+  body {
+    text-align: left;
+    color: green !important;
+    font-size: 1.8rem !important;
+  }
+}
+
+@media screen and (max-width: 37.5em) {
+  body {
+    text-align: right;
+    color: red !important;
+    font-size: 1.5rem !important;
+  }
+}
+
+@media screen and (min-width: 112.5em) {
+  body {
+    font-weight: 2000;
+    color: aqua !important;
+    font-size: 3rem !important;
+  }
 }
 
 body {
@@ -566,7 +625,7 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 10000;
+  z-index: 100;
   opacity: 0;
   visibility: hidden;
   transition: all .3s;
@@ -584,7 +643,7 @@ body {
   display: table;
   overflow: hidden;
   opacity: 0;
-  transform: translate(-50%, -50%) scale(0);
+  transform: translate(-50%, -50%) scale(1);
   transition: all .45s .2s;
 }
 

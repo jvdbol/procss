@@ -20,3 +20,47 @@
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+// Media Query Manager
+/*
+0 - 600px:          Phone
+600 - 900px         Tablet Portrait
+900 - 1200px        Tablet Landscape
+[1200 - 1800]       Normal style Desktop First Design
+1800px+             Big Desktop
+
+
+$breakpoint arguments choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+*/
+
+@mixin respond-phone {
+    @media screen and (max-width: 600px){@content;} 
+    
+}
+
+/* em and rem don't work normal in mediaqueries, they are dependend on the choosen 
+BROWSER font-size.
+REMs are also a bit problematic in mediaqueries in  some browsers.
+
+1em = 16px
+*/
+
+@mixin respond($breakpoint){
+    @if $breakpoint == phone {
+        @media screen and (max-width: 37.5em){@content;} //600px/16
+    }
+    @if $breakpoint == tab-port {
+        @media screen and (max-width: 56.25em){@content;} //900px
+    }
+    @if $breakpoint == tab-land {
+        @media screen and (max-width: 75em){@content;} //1200px
+    }
+    @if $breakpoint == big-desktop {
+        @media screen and (min-width: 112.5em){@content;} //1800px
+    }
+}

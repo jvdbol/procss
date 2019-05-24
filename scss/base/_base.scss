@@ -7,9 +7,41 @@
 }
 
 html{
-    font-size: 62.5%;
+    //this is 1rem
+    font-size: 62.5%; //1rem = 10px; 10px/16px=62.5%
+
 }
 
 body{
     box-sizing: border-box;
+
+        //dubbelop!
+    @include respond-phone {
+        color: red;
+    }
+
+
+   
+   
+    @include respond(tab-land) {
+        text-align: center;
+        color: navy !important;
+        font-size: 2.2rem !important;
+    }
+    @include respond(tab-port) {
+        text-align: left;
+        color: green !important;
+        font-size: 1.8rem !important;
+    }
+    @include respond(phone) {
+        text-align: right;
+        color: red !important;
+        font-size: 1.5rem !important;
+    }
+    @include respond(big-desktop) {
+        font-weight: 2000;
+        color: aqua !important;
+        font-size: 3rem! important;
+    }
+
 }
