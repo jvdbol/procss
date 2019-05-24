@@ -10,38 +10,26 @@ html{
     //this is 1rem
     font-size: 62.5%; //1rem = 10px; 10px/16px=62.5%
 
+    @include respond(tab-land) { //width < 1200?
+        font-size: 56.25%; //1rem = 9px, 9/16 = 56.25%
+    }
+    
+    @include respond(tab-port) { //width < 900?
+        font-size: 50%; //1rem = 8px, 8/16 = 50%
+    }
+    
+    /* GEBRUIKEN WE NIET vls college 56
+    @include respond(phone) { //width < 600?
+        font-size: 30%; //1rem = 4.8px, 4.8/16 = 30%
+    }
+    */
+    
+    @include respond(big-desktop) { //width > 1800?
+        font-size: 75%; //1rem = 12px, 12/16 = 75%
+    }
+
 }
 
 body{
     box-sizing: border-box;
-
-        //dubbelop!
-    @include respond-phone {
-        color: red;
-    }
-
-
-   
-   
-    @include respond(tab-land) {
-        text-align: center;
-        color: navy !important;
-        font-size: 2.2rem !important;
-    }
-    @include respond(tab-port) {
-        text-align: left;
-        color: green !important;
-        font-size: 1.8rem !important;
-    }
-    @include respond(phone) {
-        text-align: right;
-        color: red !important;
-        font-size: 1.5rem !important;
-    }
-    @include respond(big-desktop) {
-        font-weight: 2000;
-        color: aqua !important;
-        font-size: 3rem! important;
-    }
-
 }
