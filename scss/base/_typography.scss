@@ -4,7 +4,7 @@ body{
     font-size: $default-font-size;
     line-height: 1.7;
     color:$color-grey-dark;
-    padding: 2rem;
+    
 }
 
 .heading-primary{
@@ -13,12 +13,20 @@ body{
     
     backface-visibility: hidden; /* hack om trilling in aniematie tegen te geen, die ik niet zie overigens */
     margin-bottom: 6rem;
+
+    
+
     &--main{
         display: block;
         font-size: 6rem;
         font-weight: 400;
         letter-spacing: 3.5rem;
         animation: moveInLeft 1s ease-out;
+
+        @include respond(phone){
+         letter-spacing: 1rem;
+         font-size: 5rem;
+        }
     }
     &--sub{
         display: block;
@@ -28,6 +36,11 @@ body{
         animation-name: moveInRight;
         animation-duration: 1s;
         animation-timing-function: ease-out;
+
+        @include respond(phone){
+            letter-spacing: 0.5rem;
+            font-size: 1.8rem;
+           }
         /*
             animation-delay : 3s;
             animation-iterration-count: 3;
@@ -46,6 +59,15 @@ body{
     color: transparent;
     transition: all .2s;
     letter-spacing: .2rem;
+
+    @include respond(tab-port){
+        font-size: 3rem;
+    } 
+    @include respond(phone){
+        font-size: 2.5rem;
+    } 
+
+
     &:hover{
         transform: skewY(-2deg) skewX(4deg) scale(1.1);
         text-shadow: 0 .5rem 3rem rgba($color-black, .5)

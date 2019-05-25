@@ -36,16 +36,17 @@ $breakpoint arguments choices:
 - tab-land
 - big-desktop
 
-*/
-
+Is vervangen door respond($breakpoint):
 @mixin respond-phone {
     @media screen and (max-width: 600px){@content;} 
     
 }
 
-/* em and rem don't work normal in mediaqueries, they are dependend on the choosen 
+em and rem don't work normal in mediaqueries, they are dependend on the choosen 
 BROWSER font-size.
 REMs are also a bit problematic in mediaqueries in  some browsers.
+
+ORDER: Base + typography > general layout + grid > page layout > components
 
 1em = 16px
 */
