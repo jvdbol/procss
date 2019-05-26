@@ -793,6 +793,12 @@ body {
   color: #f7f7f7;
 }
 
+@media screen and (max-width: 56.25em) {
+  .footer {
+    padding: 8rem 0;
+  }
+}
+
 .footer__logo-box {
   text-align: center;
   margin-bottom: 8rem;
@@ -807,6 +813,13 @@ body {
   border-top: 1px solid #777;
   padding: 2rem;
   display: inline-block;
+}
+
+@media screen and (max-width: 56.25em) {
+  .footer__navigation {
+    width: 100%;
+    text-align: center;
+  }
 }
 
 .footer__list {
@@ -843,13 +856,35 @@ body {
   float: right;
 }
 
+@media screen and (max-width: 56.25em) {
+  .footer__copyright {
+    width: 100%;
+    text-align: center;
+    float: none;
+    text-align: left;
+  }
+}
+
 .row {
   max-width: 114rem;
   margin: 0 auto;
 }
 
 .row:not(:last-child) {
-  margin-bottom: 3rem;
+  margin-bottom: 8rem;
+}
+
+@media screen and (max-width: 56.25em) {
+  .row:not(:last-child) {
+    margin-bottom: 6rem;
+  }
+}
+
+@media screen and (max-width: 56.25em) {
+  .row {
+    max-width: 50rem;
+    padding: 0 3rem;
+  }
 }
 
 .row::after {
@@ -864,6 +899,19 @@ body {
 
 .row [class^="col-"]:not(:last-child) {
   margin-right: 6rem;
+}
+
+@media screen and (max-width: 56.25em) {
+  .row [class^="col-"]:not(:last-child) {
+    margin-right: 0;
+    margin-bottom: 6rem;
+  }
+}
+
+@media screen and (max-width: 56.25em) {
+  .row [class^="col-"] {
+    width: 100% !important;
+  }
 }
 
 .row .col-1-of-1 {
@@ -906,6 +954,13 @@ body {
   /* zie ook path-clip maker: bennettfeely.com/clippy */
 }
 
+@media screen and (max-width: 37.5em) {
+  .header {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
+  }
+}
+
 .header__logo-box {
   position: absolute;
   /*header daarom relative!*/
@@ -944,6 +999,20 @@ body {
   cursor: pointer;
 }
 
+@media screen and (max-width: 56.25em) {
+  .navigation__button {
+    top: 4rem;
+    right: 4rem;
+  }
+}
+
+@media screen and (max-width: 37.5em) {
+  .navigation__button {
+    top: 3.5rem;
+    right: 3.5rem;
+  }
+}
+
 .navigation__background {
   height: 6rem;
   width: 6rem;
@@ -954,6 +1023,20 @@ body {
   background-image: radial-gradient(#7ed56f, #28b485);
   z-index: 1000;
   transition: transform 0.5s cubic-bezier(0.1, 0, 0.61, 1);
+}
+
+@media screen and (max-width: 56.25em) {
+  .navigation__background {
+    top: 4.5rem;
+    right: 4.5rem;
+  }
+}
+
+@media screen and (max-width: 37.5em) {
+  .navigation__background {
+    top: 3.5rem;
+    right: 3.5rem;
+  }
 }
 
 .navigation__nav {

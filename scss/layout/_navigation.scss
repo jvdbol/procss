@@ -17,6 +17,18 @@
         text-align: center;
         box-shadow: 0 1rem 3rem rgba($color-black, .1);
         cursor: pointer;
+
+        @include respond(tab-port){
+            top: 4rem;
+            right: 4rem;
+
+        }
+
+        @include respond(phone){
+            top: 3.5rem;
+            right: 3.5rem;
+
+        }
     }
 
     &__background{
@@ -33,6 +45,18 @@
 
         // CUBIC-BEZIER zie: https://cubic-bezier.com en https://easings.ne
         transition: transform .5s cubic-bezier(.1,0,.61,1);
+
+        @include respond(tab-port){
+            top: 4.5rem;
+            right: 4.5rem;
+
+        }
+
+        @include respond(phone){
+            top: 3.5rem;
+            right: 3.5rem;
+
+        }
     }
 
     &__nav{

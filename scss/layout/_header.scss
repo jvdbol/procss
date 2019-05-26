@@ -12,6 +12,11 @@
     
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
     clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); /* zie ook path-clip maker: bennettfeely.com/clippy */
+
+    @include respond(phone){
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%); 
+    }
    
     &__logo-box{
         position: absolute; /*header daarom relative!*/
