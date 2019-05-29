@@ -10,7 +10,6 @@ body{
 .heading-primary{
     color : $color-white;
     text-transform: uppercase;
-    
     backface-visibility: hidden; /* hack om trilling in aniematie tegen te geen, die ik niet zie overigens */
     margin-bottom: 6rem;
 
